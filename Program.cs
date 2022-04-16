@@ -97,3 +97,21 @@ else
 
 Console.Write("Input integer number: ");
 int num = Convert.ToInt32(Console.ReadLine());
+int current;
+
+int x = (num % 2);
+
+if (x != 0)   
+{
+    current = 0;
+    num = num - 1;
+}
+else
+{
+    current = 0;
+}
+while(current <=num)
+{
+    Console.Write(current + " ");
+    current = current + 2;
+}
