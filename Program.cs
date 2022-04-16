@@ -60,4 +60,40 @@ if (num3 > max)  max = num3;
 Console.Write("max = ");
 Console.WriteLine(max);
 
+
+
+// Задача 3: Напишите программу, которая на вход принимает число и выдаёт, является ли число чётным (делится ли оно на два без остатка).
+
+4 -> да
+-3 -> нет
+7 -> нет
+
+// Решение третьей задачи
+
+Console.Write("Input integer number: ");
+int num = Convert.ToInt32(Console.ReadLine());
+
+int x = (num % 2);
+
+if (x == 0)   
+{
+    Console.WriteLine("Even number");
+}
+else
+{
+    Console.WriteLine("The number is odd");
+}
+
+
+
+// Задача 4: Напишите программу, которая на вход принимает число (N), а на выходе показывает все чётные числа от 1 до N.
+
+5 -> 2, 4
+8 -> 2, 4, 6, 8
+
+// Решение четвертой задачи
+
 */
+
+Console.Write("Input integer number: ");
+int num = Convert.ToInt32(Console.ReadLine());
