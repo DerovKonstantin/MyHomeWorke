@@ -30,10 +30,11 @@ void SecondDigit()
     Console.Write("Input three digit number: ");
     int tdn = Convert.ToInt32(Console.ReadLine());
     Console.Write(tdn + " -> ");
-    int ddn = tdn / 100;
+    int ddn = tdn / 10;
     int sdn = ddn % 10;
 
     Console.Write(sdn);
+    Console.WriteLine( " " );
 }
 
 SecondDigit();
