@@ -48,7 +48,7 @@ else
 
     A (7,-5, 0); B (1,-1,9) -> 11.53
 
-    */
+//Решение задачи 21
 
 Console.Clear();
 double LineSegment (double xa, double ya, double za, double xb, double yb, double zb)
@@ -70,3 +70,30 @@ Console.WriteLine(" Enter the coordinate of the sixth point: ");
 double zb = Convert.ToInt32(Console.ReadLine());
 
 Console.WriteLine(LineSegment (xa, ya, za, xb, yb, zb));
+
+
+
+//Задача 23
+
+    Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
+
+    3 -> 1, 8, 27
+    5 -> 1, 8, 27, 64, 125
+
+*/
+
+Console.Clear();
+void NumCub(int N)
+{
+    int count = 1;
+    while(count <=N)
+    {
+        Console.Write(count * count * count + " ");
+        count++;
+    }
+}
+Console.WriteLine(" Input number (N): ");
+int N = Convert.ToInt32(Console.ReadLine());
+Console.Write(N + " -> ");
+NumCub(N);
+Console.WriteLine( " " );
