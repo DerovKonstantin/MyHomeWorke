@@ -104,7 +104,7 @@ int[] myArray = CrreateRandomArray(3,0,10);
 ShowArray(myArray);
 FindeEvenNumbers (myArray);
 
-*/
+
 
 // Задача 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
 
@@ -152,4 +152,54 @@ int[] myArray = CrreateRandomArray(20,0,10);
 ShowArray(myArray);
 SumElementsOddPositions(myArray);
 
+*/
 
+// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+
+// [3 7 22 2 78] -> 76
+
+// решение задачи №38
+
+double [] CrreateRandomArray(int size, double min, double max)
+
+{
+    double[] array = new double [size];
+
+    for(int i = 0; i < size; i++)
+    {
+        array[i] = new Random().NextDouble()* (max - min) + min;
+    }
+
+    return array;
+}
+
+void ShowArray(double[] array)
+
+{
+    for(int i = 0; i < array.Length; i++)
+        Console.Write(array[i] + " ");
+    Console.WriteLine();
+}
+
+void DiffMaxMinElements (double[] array)
+{
+    double difmaxnum = 0;
+    double difminnum = 0;
+    
+    for(int i = 0; i < array.Length; i++)
+    {
+        if(array[i] > difmaxnum)
+            difmaxnum = array[i];
+        if(array[i] < difminnum)
+            difminnum = array[i];
+    }
+    double difmaxminnum = difmaxnum - difminnum;
+
+    Console.WriteLine("Maximum element is " + difmaxnum);
+    Console.WriteLine("Minimum element is " + difminnum);
+    Console.WriteLine("Difference between maximum and minimum is " + difmaxminnum);
+}
+
+double[] myArray = CrreateRandomArray(10, -10, 10);
+ShowArray(myArray);
+DiffMaxMinElements(myArray);
