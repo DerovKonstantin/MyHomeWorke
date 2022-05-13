@@ -1,156 +1,76 @@
-﻿
-/*
-Пример с урока №3 по поиску максимального элемента
-
-Console.Clear();
-
-int[] arr = {1, 5, 4, 3, 2, 6, 7, 1, 1};
-
-//  Переписали строку
-void PrintArray(int[] array)
-{
-    int count = array.Length;
-
-    for (int i = 0; i < count; i++)
-    {
-        Console.Write($"{array[i]}");
-    }
-    Console.WriteLine();
-}
-
-//  Блок поиска максимального элемента
-void SelectionSort(int[] array)
-{
-    for (int i = 0; i < array.Length -1; i++)
-    {
-        int minPosition = i;
-        for (int j = i + 1; j < array.Length; j++ )
-        {
-            if(array[j] < array[minPosition]) minPosition = j;
-            int temporary = array[i];
-            array[i] = array[minPosition];
-            array[minPosition] = temporary;
-        }
-    }
-}
-
-PrintArray(arr);
-SelectionSort(arr);
-PrintArray(arr);
-
-----------------------------------------------------------------------------
-//  Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
-
-//  0, 7, 8, -2, -2 -> 2
-
-//  1, -7, 567, 89, 223-> 3
-
-//  Решение
-
-
-Console.Clear();
-
-int[] arr = {1, 5, 4, 3, 2, 6, 7, 1, 1};
-
-void PrintArray(int[] array)
-{
-    int count = array.Length;
-
-    for (int i = 0; i < count; i++)
-    {
-        Console.Write($"{array[i]}");
-    }
-    Console.WriteLine();
-}
-
-void NumberOfNumbersGreaterThan0(int[] array)
-{
-    int numofnum = 0;
-    for (int i = 0; i < array.Length; i++)
-    {
-        if(array[i] > 0) numofnum++;
-    }
-    Console.Write("Number of Numbers greater than 0 is (Колличество чисел больше 0) = " + numofnum);
-    Console.WriteLine();
-}
-
-PrintArray(arr);
-NumberOfNumbersGreaterThan0(arr);
-
-
-
+﻿/*
+//------------------------------------------------------------------------------------------
 //  Задача 42: Напишите программу, которая будет преобразовывать десятичное число в двоичное.
 
 //  45 -> 101101
-
 //  3 -> 11
-
 //  2 -> 10
 
-//  Решение
-
-
-
 Console.Clear();
-void ConDecToBinary (int tennum)
+Console.Write("Введите десятичное число (Enter a decimal number) - ");
+int tennum = Convert.ToInt32(Console.ReadLine()); 
+int binnum = 0; //  а - остаток после % деления из которого формируется число в даоичной системе исчесления
+int i = 0; 
+int saiz = 0; // s - размер прредпологаемого массива
+int snum = tennum;
+while(snum >= 1)
 {
-    int binnum = 0;
-    int proxynum = 0;
-    if(tennum == 0) binnum = 0;
-    if(tennum == 1) binnum = 1;
-    if(tennum == 2) binnum = 10;
-    if(tennum == 3) binnum = 11;
-    if(tennum == 4) binnum = 100;
-    if(tennum == 5) binnum = 101;
-    if(tennum == 6) binnum = 110;
-    if(tennum == 7) binnum = 111;
-    if(tennum == 8) binnum = 1000;
-    if(tennum == 9) binnum = 1001;
-    if(tennum == 10) binnum = 1010;
-    if(tennum > 0)
-    
-    {
-        for(int i = 0; proxynum < cdtbnum ; i++)
-        {
-            proxynum = proxynum + 1;
-            binnum = binnum + 1;
-            if(proxynum < cdtbnum)
-            {
-                proxynum = proxynum + 1;
-                binnum = (binnum - 1) * 10;
-            }
-        }    
-        Console.WriteLine(" is  " + binnum );
-    }
-    
+    saiz++;
+    snum = snum / 2;
+}
+int[] b = new int[saiz]; // развернутый массив
+while(tennum >= 1)
+{
+    binnum = tennum % 2;
+    b[i] = binnum;
+    i++;
+    tennum = tennum / 2;
 }
 
-Console.Write("Input number: ");
-int cdtbnum = Convert.ToInt32(Console.ReadLine());
-ConDecToBinary (cdtbnum);
+for(i = (b.Length - 1); i >= 0; i--)
+{
+    Console.Write(b[i]);
+}
+Console.WriteLine();
+
+//------------------------------------------------------------------------------------------------------------
+
+//  Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
+
+//  0, 7, 8, -2, -2 -> 2
+//  1, -7, 567, 89, 223-> 3
+
+Console.Write("Введите числа через пробел (Enter numbers separated by spaces): - ");
+int[] arr = Array.ConvertAll(Console.ReadLine().Split(),int.Parse);
+int count = 0;
+
+for(int i = 0; i < arr.Length; i++)
+{
+    if(arr[i] > 0)
+    {
+        count++;
+    }
+}
+Console.WriteLine("пользователь ввёл ( user entered ) - " + count + " - чисел больше нуля (numbers greater than zero)");
+
+//----------------------------------------------------------------------------------------------------------------------
 
 */
+//  Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
 
-Console.Clear();
-void ConDecToBinary (int tennum)
-{
-    
-    
-    {
-        int count = 0;
-        for(int i = 0; 0 < tennum ; i++)
-        {
-            tennum = tennum / 2;
-            count = count +1;
-            
-            Console.Write(" is  " + count );
-            Console.WriteLine(" is  " + tennum );
-        }    
-        
-    }
-    
-}
+//  b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; 5,5)
 
-Console.Write("Input number: ");
-int tennum = Convert.ToInt32(Console.ReadLine());
-ConDecToBinary (tennum);
+Console.Write("Введите k1(Enter k1): ");
+float k1 = Convert.ToInt32(Console.ReadLine()); // var k1 = Convert.ToDoble(Console.ReadLine());
+Console.Write("Введите b1(Enter b1): ");
+float b1 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите k2(Enter k2): ");
+float k2 = Convert.ToInt32(Console.ReadLine());
+Console.Write("Введите b2(Enter b2): ");
+float b2 = Convert.ToInt32(Console.ReadLine());
+
+float x = -(b1 - b2) / (k1 - k2);
+float y = k2 * x + b2;
+
+Console.Write(" Точка пересечения двух прямых (Point of intersection of two lines): х = " + x + " и y = " );
+Console.WriteLine(y);
