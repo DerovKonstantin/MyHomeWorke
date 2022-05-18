@@ -9,10 +9,10 @@
 //  1 -3,3 8 -9,9
 //  8 7,8 -7,1 9
 
-
+*/
 // создадим метод создания матрицы
 
-void PrintArray(float[,] matr)
+void PrintArray(double[,] matr)
 {
     for(int i = 0; i < matr.GetLength(0); i++)
     {
@@ -24,24 +24,23 @@ void PrintArray(float[,] matr)
     }
 }
 
-void FillArray(float[,] matr)
+void FillArray(double[,] matr)
 {
     for(int i = 0; i < matr.GetLength(0); i++)
     {
         for (int j = 0; j < matr.GetLength(1); j++)
         {
-            matr[i, j] = (float)new Random().NextDouble() * (10- (-10)) + (-10);
+            matr[i, j] = Math.Round((10 - 10) + (10) * new Random().NextDouble(),1);
         }
     }
 }
 
 Console.Clear();
-float[,] matrix = new float[3, 4];
+double[,] matrix = new double[3, 4];
 FillArray(matrix);
 PrintArray(matrix);
-
+/*
 //-------------------------------------------------------------
-*/
 
 //  Задача 50. Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
 
@@ -106,7 +105,7 @@ FindIElement(matrix, ipos);
 Console.WriteLine();
 
 //------------------------------------------
-*/
+
 
 //  Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
 
@@ -136,5 +135,6 @@ PrintArray(matrix);
 Console.WriteLine();
 SumOfColumnElements(matrix);
 Console.WriteLine();
+*/
 
 
