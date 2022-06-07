@@ -44,7 +44,7 @@ int num = Convert.ToInt32(Console.ReadLine());
 if(num % 2 == 0) Console.WriteLine("The number " + num + " is even");
 else Console.WriteLine("The number " + num + " is not even");
 //-------------------------------------------------------------------
-*/
+
 //  Задача 8: Напишите программу, которая на вход принимает число (N), а на выходе показывает все чётные числа от 1 до N.
 //  5 -> 2, 4
 //  8 -> 2, 4, 6, 8
@@ -58,3 +58,5 @@ while(current <= num)
     Console.Write(current + " ");
     current += 2;
 }
+//--------------------------------------------
+*/
